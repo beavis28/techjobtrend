@@ -1,0 +1,64 @@
+
+.footer{
+ font-size:small;
+ background-color: #E1F5FE;
+ padding: 30px;
+}
+
+.plot{
+    width: 50%;
+    height: 50%;
+}
+
+.changes{
+ margin-top: 20px;
+}
+.changes-tables-container{
+  display: flex;
+  flex-flow: row;
+}
+.changes-table {
+  margin: 10px;
+  margin-bottom: 20px;
+  border: solid 1px #B3E5FC;
+}
+.suggest-input-row{
+  display: flex;
+  flex-flow: row;
+}
+
+.buttons-container{
+ display:flex;
+ flex-flow:column;
+ padding-left: 15px;
+ align-items: center
+}
+/*overriding material UI styles*/
+.table-row{
+    height: 25px !important;
+    padding: 5px !important;
+    text-align: center !important;
+}
+
+.table-pointer{
+    cursor: pointer;
+}
+.table-column{
+    height: 20px !important;
+    padding: 5px !important;
+    text-align: center !important;
+}
+.table-column__rank{
+     width: 10px !important;
+}
+
+.top-plot-container{
+    display: flex;
+    flex-flow: row;
+}
+
+/*
+.top-left-container{
+    flex-flow: column;
+}
+*/
