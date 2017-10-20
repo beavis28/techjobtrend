@@ -10,6 +10,11 @@ gulp.task('move_data', [], () => {
     .pipe(gulp.dest('./dataProcess/new'))
 });
 
-gulp.task('data', ['move_data'], shell.task([
+gulp.task('process', ['move_data'], shell.task([
   'cd dataProcess && python process_tag_data.py && python reconcile_tag_data.py'
 ]));
+
+gulp.task('data', ['move_data', 'process'], () => {
+  return gulp.src('dataProcess/result/*.json')
+    .pipe(gulp.dest('./src/data'))
+});
