@@ -1,0 +1,15 @@
+const gulp = require('gulp');
+const shell = require('gulp-shell');
+
+gulp.task('scrape', shell.task([
+  'cd jobScrape && python main.py'
+]));
+
+gulp.task('move_data', [], () => {
+  return gulp.src('jobScrape/*.json')
+    .pipe(gulp.dest('./dataProcess/new'))
+});
+
+gulp.task('data', ['move_data'], shell.task([
+  'cd dataProcess && python process_tag_data.py && python reconcile_tag_data.py'
+]));

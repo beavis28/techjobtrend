@@ -3,6 +3,8 @@
   "version": "0.1.0",
   "private": true,
   "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-shell": "^0.6.3",
     "react-scripts": "^1.0.10"
   },
   "dependencies": {
@@ -23,6 +25,8 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "scrape": "node node_modules/gulp/bin/gulp scrape",
+    "data": "node node_modules/gulp/bin/gulp data"
   }
 }
