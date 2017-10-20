@@ -88,7 +88,8 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <h1 className="App-title">Tech Job Trends</h1>
+        <h1 className="App-title">Tech Job Trend</h1>
+        <div className="App-title-desc">-- which tech should you learn? --</div>
         <div className="App-header">
           <Grid container spacing={24}  >
             <Grid item xs={12} sm={12} md={6} lg={6}>

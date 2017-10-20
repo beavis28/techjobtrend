@@ -33,7 +33,7 @@ class RankingsTable  extends React.Component {
         <TableRow className="table-row">
           <TableCell className="table-column table-column__rank">RANK</TableCell>
           <TableCell className="table-column" >TECH</TableCell>
-          <TableCell className="table-column">% OF POSTINGS</TableCell>
+          <TableCell className="table-column">% OF JOB POSTINGS</TableCell>
 
         </TableRow>
       </TableHead>

@@ -3,6 +3,16 @@
  font-size:small;
  background-color: #E1F5FE;
  padding: 30px;
+ text-align: center;
+}
+
+.App-title{
+ text-align: center;
+}
+
+.App-title-desc{
+ text-align: center;
+ margin-bottom:10px;
 }
 
 .plot{
