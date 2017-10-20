@@ -88,12 +88,12 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <h1>Tech Job Trends</h1>
+        <h1 className="App-title">Tech Job Trends</h1>
         <div className="App-header">
           <Grid container spacing={24}  >
             <Grid item xs={12} sm={12} md={6} lg={6}>
               <RankingsTable
-                tags={tagData[tagData.length - 1].tags.slice(0, 50)}
+                tags={tagData[tagData.length - 1].tags.slice(0, 30)}
                 history={this.props.history}
                 location={this.props.location}
               />
