@@ -4,33 +4,36 @@ import _ from "lodash";
 
 class Plot extends React.Component {
   componentDidMount() {
-     if(_.isEmpty(this.props.data)){
-       return;
-     }
+    //  if(_.isEmpty(this.props.data)){
+    //    return;
+    //  }
 	   this.drawPlot();
   }
   componentDidUpdate(prevProps,prevState) {
-    if(_.isEmpty(this.props.data) && _.isEmpty(prevProps.data)){
-      return;
-    }
+    // if(_.isEmpty(this.props.data) && _.isEmpty(prevProps.data)){
+    //   return;
+    // }
     this.drawPlot();
   }
 
   render() {
     return (
+      <div>
+      <div className="Graph-title">History Chart</div>
       <div id="plot"></div>
+      </div>
     );
   }
 
   drawPlot(){
     Plotly.newPlot('plot',this.props.data, {
-      width: 700,
+      width: 500,
       height: 500,
       margin: {
         l: 50,
         r: 30,
-        b: 30,
-        t: 0,
+        b: 50,
+        t: 20,
         pad: 4
       },
       xaxis: {

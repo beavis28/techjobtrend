@@ -3,8 +3,10 @@ import _ from 'lodash';
 import Grid from 'material-ui/Grid';
 
 import tagData from './data/data.json';
+import pieData from './data/pie_data.json';
 import './App.css';
 import Plot from './components/Plot';
+import Pie from './components/Pie';
 
 import RankingsTable from './components/RankingsTable';
 import Suggest from './components/Suggest';
@@ -116,6 +118,12 @@ class App extends Component {
                   history={this.props.history}
                   location={this.props.location}
                 />
+                <div className="Graph-title">% of all tags</div>
+                <Pie
+                  data={pieData}
+                  history={this.props.history}
+                  location={this.props.location}
+                />
               </div>
             </Grid>
           </Grid>
@@ -125,7 +133,7 @@ class App extends Component {
           location={this.props.location}
         />
         <div className="footer">
-          <div>Powered By <a target="_blank" href="https://stackoverflow.com/jobs">Stack Over Flow</a></div>
+          <div>Powered By <a target="_blank" href="https://stackoverflow.com/jobs">Stack Over Flow Career</a></div>
         </div>
       </div>
     );

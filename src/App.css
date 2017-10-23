@@ -15,6 +15,11 @@
  margin-bottom:10px;
 }
 
+.Graph-title{
+ text-align: center;
+ margin-bottom:14px;
+}
+
 .plot{
     width: 50%;
     height: 50%;
