@@ -25,6 +25,11 @@
     height: 50%;
 }
 
+.news {
+  display: flex;
+  flex-flow: row;
+}
+
 .changes{
  margin-top: 20px;
 }

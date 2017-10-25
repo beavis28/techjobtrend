@@ -19,9 +19,9 @@ class TopChanges  extends React.Component {
 
  componentWillMount() {
    //iterate over each date
-   for (var i = 0; i < changesData.length; i++) {
-     var obj = changesData[i];
-   }
+  //  for (var i = 0; i < changesData.length; i++) {
+  //    var obj = changesData[i];
+  //  }
  }
 
   render(){

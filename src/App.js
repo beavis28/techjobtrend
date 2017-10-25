@@ -9,9 +9,11 @@ import Plot from './components/Plot';
 import Pie from './components/Pie';
 
 import RankingsTable from './components/RankingsTable';
+import News from './components/News';
 import Suggest from './components/Suggest';
 import SelectionTags from './components/SelectionTags';
 import TopChanges from './components/TopChanges';
+import RegionRanking from './components/RegionRanking';
 import qs from 'qs';
 
 
@@ -118,7 +120,6 @@ class App extends Component {
                   history={this.props.history}
                   location={this.props.location}
                 />
-                <div className="Graph-title">% of all tags</div>
                 <Pie
                   data={pieData}
                   history={this.props.history}
@@ -128,6 +129,10 @@ class App extends Component {
             </Grid>
           </Grid>
         </div>
+        <RegionRanking
+          history={this.props.history}
+          location={this.props.location}
+        />
         <TopChanges
           history={this.props.history}
           location={this.props.location}
