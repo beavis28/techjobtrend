@@ -27,8 +27,6 @@ class Plot extends React.Component {
 
   drawPlot(){
     Plotly.newPlot('plot',this.props.data, {
-      width: 500,
-      height: 500,
       margin: {
         l: 50,
         r: 30,

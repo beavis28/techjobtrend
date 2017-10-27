@@ -27,8 +27,6 @@ class Pie extends React.Component {
 
   drawPie(){
     Plotly.newPlot('pie',this.props.data, {
-      width: 500,
-      height: 500,
       margin: {
         l: 50,
         r: 30,
