@@ -34,6 +34,16 @@ class SOSpider(scrapy.Spider):
                 else:
                     item['remote'] = ""
 
+                if sel.xpath('div[@class="-job-summary "]/div/span[@class="-visa"]/text()').extract():
+                    item['visa'] = ''.join(sel.xpath('div[@class="-job-summary "]/div/span[@class="-visa"]/text()').extract()).strip()
+                else:
+                    item['visa'] = ""
+
+                if sel.xpath('div[@class="-job-summary "]/div/span[@class="-relocation"]/text()').extract():
+                    item['relocation'] = ''.join(sel.xpath('div[@class="-job-summary "]/div/span[@class="-relocation"]/text()').extract()).strip()
+                else:
+                    item['relocation'] = ""
+
                 item['tags'] = sel.xpath('div[@class="-job-summary "]/div/p/a/text()').extract()
             else:
                 print "duplicate"
