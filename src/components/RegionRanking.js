@@ -42,7 +42,7 @@ class RegionRanking  extends React.Component {
       <div className="changes">
         <div className="buttons-container">
           <div>
-            Tech Ranking Based On Region
+            Tech ranking based on region
           </div>
           <div>
             <Select value={this.state.btnSelection} onChange={this.clickHandler('btnSelection')} >
