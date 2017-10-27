@@ -21,12 +21,16 @@ class SOSpider(scrapy.Spider):
                 item = JobItem()
                 item['_id'] = id
                 item['title'] = ''.join(sel.xpath('div[@class="-job-summary "]/div/h2/a/text()').extract())
-                item['salary'] = ''.join(sel.xpath('div[@class="-job-summary "]/div/div[@class="-salary"]/text()').extract()).strip()
                 item['company'] = ''.join(sel.xpath('div[@class="-job-summary "]/div/div[@class="-name"]/text()').extract()).strip()
                 item['location'] = ''.join(sel.xpath('div[@class="-job-summary "]/div/div[@class="-location"]/text()').extract()).strip()
 
-                if sel.xpath('div[@class="-job-summary "]/div/p[@class="-remote"]/text()').extract():
-                    item['remote'] = sel.xpath('div[@class="-job-summary "]/div/p[@class="-remote"]/text()').extract()[0].strip()
+                if sel.xpath('div[@class="-job-summary "]/div/span[@class="-salary"]/text()').extract():
+                    item['salary'] = ''.join(sel.xpath('div[@class="-job-summary "]/div/span[@class="-salary"]/text()').extract()).strip()
+                else:
+                    item['salary'] = ""
+
+                if sel.xpath('div[@class="-job-summary "]/div/span[@class="-remote"]/text()').extract():
+                    item['remote'] = ''.join(sel.xpath('div[@class="-job-summary "]/div/span[@class="-remote"]/text()').extract()).strip()
                 else:
                     item['remote'] = ""
 
