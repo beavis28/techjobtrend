@@ -138,7 +138,7 @@ class App extends Component {
           location={this.props.location}
         />
         <div className="footer">
-          <div>Powered By <a target="_blank" href="https://stackoverflow.com/jobs">Stack Over Flow Career</a></div>
+          <div>Source From <a target="_blank" href="https://stackoverflow.com/jobs">Stack Over Flow Career</a></div>
         </div>
       </div>
     );
