@@ -4,9 +4,11 @@ import Grid from 'material-ui/Grid';
 
 import tagData from './data/data.json';
 import pieData from './data/pie_data.json';
+import rssData from './data/rss.json';
 import './App.css';
 import Plot from './components/Plot';
 import Pie from './components/Pie';
+import ThreeGrid from './components/ThreeGrid';
 
 import RankingsTable from './components/RankingsTable';
 import News from './components/News';
@@ -15,7 +17,6 @@ import SelectionTags from './components/SelectionTags';
 import TopChanges from './components/TopChanges';
 import RegionRanking from './components/RegionRanking';
 import qs from 'qs';
-
 
 class App extends Component {
   state = {
@@ -92,7 +93,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <h1 className="App-title">Tech Job Trend</h1>
+        <h1 className="App-title">Tech Job Trends</h1>
         <div className="App-title-desc">-- which tech should you learn? --</div>
         <div className="App-header">
           <Grid container spacing={24}  >
@@ -129,6 +130,11 @@ class App extends Component {
             </Grid>
           </Grid>
         </div>
+        <ThreeGrid 
+          rss_data={rssData}
+          history={this.props.history}
+          location={this.props.location}
+        />
         <RegionRanking
           history={this.props.history}
           location={this.props.location}

@@ -19,7 +19,7 @@ class Pie extends React.Component {
   render() {
     return (
       <div>
-          <div className="Graph-title">% of all tags</div>
+          <div className="Graph-title">% Of All Tags</div>
           <div id="pie"></div>
       </div>
     );

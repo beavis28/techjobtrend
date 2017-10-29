@@ -1,3 +1,5 @@
 arrow==0.10.0
 python-dateutil==2.6.1
 six==1.10.0
+currencylayer==1.0.0
+feedparser==5.2.1

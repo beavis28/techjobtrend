@@ -29,7 +29,7 @@ class TopChanges  extends React.Component {
       <div className="changes">
         <div className="buttons-container">
           <div>
-            What tech is rising or falling fastest
+            What Tech is rising or falling fastest
           </div>
           <div>
             <Button raised key="top25" color="primary" style={style} onClick={() => this.clickHandler("top25")}>Top 25</Button>

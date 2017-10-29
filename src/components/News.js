@@ -1,36 +1,39 @@
 import React from 'react';
-
-import qs from 'qs';
-import _ from 'lodash';
-import Paper from 'material-ui/Paper';
-import Grid from 'material-ui/Grid';
+import _ from "lodash";
+import List, { ListItem, ListItemText } from 'material-ui/List';
+import Avatar from 'material-ui/Avatar';
 
 const style = {
-    flex:1,
-    margin: 20,
-    textAlign: 'center',
-    display: 'inline-block',
-}
+  overflow: 'auto',
+  maxHeight: 300,
+  textAlign:"right"
+};
 
 class News extends React.Component {
-   state = {
-    btnSelection: "top25",
-  };
-
- componentWillMount() {
- }
-
-  render(){
-    return (
-      <div className="news">
-        <Grid container spacing={24}  >
-          <Paper style={style} zDepth={3}>
-          test
-          </Paper>
-        </Grid>
-      </div>
-    )
+  state = {
+    rss_data : this.props.rss_data
   }
-}
 
+  render() {
+    return (
+      <div>
+        <div className="App-title-desc">Latest Tech News</div>
+        <List style={style} >
+          {
+            this.state.rss_data.map((v, index) =>
+            <ListItem button>
+              <Avatar alt={v.title} src={v.pic} /> 
+              <ListItemText primary={v.title} secondary={v.published} onClick={() => this.clickHandler(v.link)}/>
+            </ListItem> )
+          }
+        </List>
+      </div>
+    );
+  }
+
+  clickHandler = (value) => {
+    window.open(value);
+  }
+
+}
 export default News;
