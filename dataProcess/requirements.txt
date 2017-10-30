@@ -3,3 +3,5 @@ python-dateutil==2.6.1
 six==1.10.0
 currencylayer==1.0.0
 feedparser==5.2.1
+bottlenose==1.1.3
+beautifulsoup4==4.6.0
