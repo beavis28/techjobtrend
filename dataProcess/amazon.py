@@ -11,8 +11,11 @@ ASSOCIATE_TAG = "beavis2809-20"
 amazon = bottlenose.Amazon(ACCESS_KEY, SECRET_ACCESS_KEY, ASSOCIATE_TAG)
 response = amazon.ItemSearch(Keywords="javascript", SearchIndex="KindleStore", ResponseGroup="Images, ItemAttributes, Offers")
 soup = BeautifulSoup(response,"lxml")
+output_data = []
 
+#print(soup.find_all('item')[0]('itemlinks').prettify())
+for item in soup.find_all('item'):
+  output_data.append({'title': item.title.text, 'media_url': item.mediumimage.url.text, 'url': item.url.text})
 
-with open(join('result', 'amazon.json'), 'w') as outfile:
-    json.dump(soup.find('items').prettify(), outfile)
-#print(soup.find('items').prettify())
+with open(join('result', 'amazon_data.json'), 'w') as outfile:
+    json.dump(output_data, outfile)
