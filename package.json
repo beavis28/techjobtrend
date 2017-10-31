@@ -9,7 +9,8 @@
   },
   "dependencies": {
     "lodash": "^4.17.4",
-    "material-ui": "^1.0.0-beta.6",
+    "material-ui": "^1.0.0-beta.18",
+    "material-ui-icons": "^1.0.0-beta.17",
     "moment": "^2.18.1",
     "plotly.js": "^1.29.3",
     "qs": "^6.5.0",

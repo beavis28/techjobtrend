@@ -6,7 +6,7 @@ import Avatar from 'material-ui/Avatar';
 const style = {
   overflow: 'auto',
   maxHeight: 300,
-  textAlign:"right"
+  textAlign:"left"
 };
 
 class News extends React.Component {

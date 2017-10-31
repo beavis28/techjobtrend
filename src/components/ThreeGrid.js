@@ -28,7 +28,7 @@ class ThreeGrid  extends React.Component {
                  <News rss_data={this.props.rss_data} />
                 </Grid>
                 <Grid item xs={8}>
-                 <Amazon />
+                 <Amazon amazon_data={this.props.amazon_data}/>
                 </Grid>
             </Grid>
         </div>

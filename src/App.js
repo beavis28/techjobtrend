@@ -5,6 +5,7 @@ import Grid from 'material-ui/Grid';
 import tagData from './data/data.json';
 import pieData from './data/pie_data.json';
 import rssData from './data/rss.json';
+import amazonData from './data/amazon_data.json';
 import './App.css';
 import Plot from './components/Plot';
 import Pie from './components/Pie';
@@ -132,6 +133,7 @@ class App extends Component {
         </div>
         <ThreeGrid 
           rss_data={rssData}
+          amazon_data={amazonData}
           history={this.props.history}
           location={this.props.location}
         />
