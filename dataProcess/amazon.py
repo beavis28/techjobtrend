@@ -15,7 +15,7 @@ output_data = []
 
 #print(soup.find_all('item')[0]('itemlinks').prettify())
 for item in soup.find_all('item'):
-  output_data.append({'title': item.title.text, 'media_url': item.mediumimage.url.text, 'url': item.url.text})
+  output_data.append({'title': item.title.text, 'image': item.mediumimage.url.text, 'url': item.url.text})
 
 with open(join('result', 'amazon_data.json'), 'w') as outfile:
     json.dump(output_data, outfile)
