@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import _ from 'lodash';
 import Grid from 'material-ui/Grid';
+import Paper from 'material-ui/Paper';
+import Tabs, { Tab } from 'material-ui/Tabs';
 
 import tagData from './data/data.json';
 import pieData from './data/pie_data.json';
@@ -9,7 +11,6 @@ import amazonData from './data/amazon_data.json';
 import './App.css';
 import Plot from './components/Plot';
 import Pie from './components/Pie';
-import ThreeGrid from './components/ThreeGrid';
 
 import RankingsTable from './components/RankingsTable';
 import News from './components/News';
@@ -131,12 +132,6 @@ class App extends Component {
             </Grid>
           </Grid>
         </div>
-        <ThreeGrid 
-          rss_data={rssData}
-          amazon_data={amazonData}
-          history={this.props.history}
-          location={this.props.location}
-        />
         <RegionRanking
           history={this.props.history}
           location={this.props.location}
@@ -145,6 +140,7 @@ class App extends Component {
           history={this.props.history}
           location={this.props.location}
         />
+
         <div className="footer">
           <div>Source From <a target="_blank" href="https://stackoverflow.com/jobs">Stack Over Flow</a></div>
         </div>

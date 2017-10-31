@@ -5,7 +5,7 @@ import Avatar from 'material-ui/Avatar';
 
 const style = {
   overflow: 'auto',
-  maxHeight: 300,
+  maxHeight: 1000,
   textAlign:"left"
 };
 

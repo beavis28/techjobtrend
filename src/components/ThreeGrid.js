@@ -24,10 +24,10 @@ class ThreeGrid  extends React.Component {
       <div className="changes">
         <div className="changes-tables-container">
               <Grid container spacing={24}>
-                 <Grid item xs={4}>
+                 <Grid item xs={6}>
                  <News rss_data={this.props.rss_data} />
                 </Grid>
-                <Grid item xs={8}>
+                <Grid item xs={6}>
                  <Amazon amazon_data={this.props.amazon_data}/>
                 </Grid>
             </Grid>
