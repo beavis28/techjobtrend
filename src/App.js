@@ -20,6 +20,8 @@ import TopChanges from './components/TopChanges';
 import RegionRanking from './components/RegionRanking';
 import qs from 'qs';
 
+import ThreeGrid from './components/ThreeGrid';
+
 class App extends Component {
   state = {
     data: {},
@@ -132,6 +134,15 @@ class App extends Component {
             </Grid>
           </Grid>
         </div>
+
+        <ThreeGrid
+          rss_data={rssData}
+          amazon_data={amazonData}
+          history={this.props.history}
+          location={this.props.location}
+        />
+
+
         <RegionRanking
           history={this.props.history}
           location={this.props.location}
