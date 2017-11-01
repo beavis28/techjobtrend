@@ -20,7 +20,7 @@ class News extends React.Component {
         <List style={style} >
           {
             this.state.rss_data.map((v, index) =>
-            <ListItem button>
+            <ListItem button key={v.link}>
               <Avatar alt={v.title} src={v.pic} /> 
               <ListItemText primary={v.title} secondary={v.published} onClick={() => this.clickHandler(v.link)}/>
             </ListItem> )

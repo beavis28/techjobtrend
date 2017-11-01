@@ -1,7 +1,7 @@
 import React from 'react';
 import history from './history'
 import {
-  BrowserRouter as Router,
+  Router,
   Route
 } from 'react-router-dom'
 import App from './App';

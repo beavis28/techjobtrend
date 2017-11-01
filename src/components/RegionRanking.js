@@ -32,7 +32,7 @@ class RegionRanking  extends React.Component {
           <div>
             <Select value={this.state.btnSelection} onChange={this.clickHandler('btnSelection')} >
             {
-                region_data.map((v, index) => <MenuItem value={Object.keys(v)[0]}>{Object.keys(v)[0]}</MenuItem> )
+                region_data.map((v, index) => <MenuItem key={index} value={Object.keys(v)[0]}>{Object.keys(v)[0]}</MenuItem> )
             }
             </Select>
           </div>

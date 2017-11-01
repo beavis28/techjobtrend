@@ -3,6 +3,9 @@ import PropTypes from 'prop-types';
 import { withStyles } from 'material-ui/styles';
 import { GridList, GridListTile, GridListTileBar } from 'material-ui/GridList';
 import IconButton from 'material-ui/IconButton';
+import AppBar from 'material-ui/AppBar';
+import Toolbar from 'material-ui/Toolbar';
+import Typography from 'material-ui/Typography';
 
 const styles = theme => ({
   root: {
@@ -31,7 +34,14 @@ function Amazon(props) {
 
   return (
     <div className={classes.root}>
-      <GridList className={classes.gridList} cols={3}>
+      <AppBar position="static" color="default">
+        <Toolbar>
+          <Typography type="title" color="inherit">
+            Top Rank Tech Book
+          </Typography>
+        </Toolbar>
+      </AppBar>
+      <GridList className={classes.gridList} cols={3} >
         {props.amazon_data.map(tile => (
           <GridListTile key={tile.url}>
             <img src={tile.image} alt={tile.title} />
