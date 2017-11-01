@@ -19,6 +19,7 @@ const styles = theme => ({
     flexWrap: 'nowrap',
     // Promote the list into his own layer on Chrome. This cost memory but helps keeping high FPS.
     transform: 'translateZ(0)',
+    margin:'50px',
   },
   title: {
     color: theme.palette.primary[200],
@@ -32,6 +33,10 @@ const styles = theme => ({
 function Amazon(props) {
   const { classes } = props;
 
+  function clickHandler (value) {
+    window.open(value);
+  }
+
   return (
     <div className={classes.root}>
       <AppBar position="static" color="default">
@@ -41,10 +46,12 @@ function Amazon(props) {
           </Typography>
         </Toolbar>
       </AppBar>
-      <GridList className={classes.gridList} cols={3} >
+      <GridList className={classes.gridList} cols={5} >
         {props.amazon_data.map(tile => (
           <GridListTile key={tile.url}>
-            <img src={tile.image} alt={tile.title} />
+            <img src={tile.image} alt={tile.title} 
+            onClick={() => clickHandler(tile.url)}
+            />
             <GridListTileBar
               title={tile.title}
               classes={{
