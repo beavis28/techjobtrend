@@ -1,26 +1,21 @@
 import React, { Component } from 'react';
 import _ from 'lodash';
 import Grid from 'material-ui/Grid';
-import Paper from 'material-ui/Paper';
-import Tabs, { Tab } from 'material-ui/Tabs';
+import './App.css';
+import qs from 'qs';
 
 import tagData from './data/data.json';
 import pieData from './data/pie_data.json';
 import rssData from './data/rss.json';
 import amazonData from './data/amazon_data.json';
-import './App.css';
-import Plot from './components/Plot';
-import Pie from './components/Pie';
 
-import RankingsTable from './components/RankingsTable';
-import News from './components/News';
+import Plot from './components/Plot';
+import TechJobTabs from './components/TechJobTabs';
+import Pie from './components/Pie';
 import Suggest from './components/Suggest';
 import SelectionTags from './components/SelectionTags';
 import TopChanges from './components/TopChanges';
 import RegionRanking from './components/RegionRanking';
-import qs from 'qs';
-
-import ThreeGrid from './components/ThreeGrid';
 
 class App extends Component {
   state = {
@@ -102,11 +97,12 @@ class App extends Component {
         <div className="App-header">
           <Grid container spacing={24}  >
             <Grid item xs={12} sm={12} md={6} lg={6}>
-              <RankingsTable
+            <TechJobTabs 
                 tags={tagData[tagData.length - 1].tags.slice(0, 30)}
+                rss_data={rssData}
+                amazon_data={amazonData}
                 history={this.props.history}
-                location={this.props.location}
-              />
+                location={this.props.location}/>
             </Grid>
             <Grid item xs={12} sm={12} md={6} lg={6}>
               <div className="top-left-container">
@@ -134,14 +130,6 @@ class App extends Component {
             </Grid>
           </Grid>
         </div>
-
-        <ThreeGrid
-          rss_data={rssData}
-          amazon_data={amazonData}
-          history={this.props.history}
-          location={this.props.location}
-        />
-
 
         <RegionRanking
           history={this.props.history}

@@ -20,21 +20,6 @@ class RegionRanking  extends React.Component {
   };
 
  componentWillMount() {
-
-   //iterate over each region
-//    for (var i = 0; i < region_data.length; i++) {
-//      var obj = region_data[i];
-//      if (Object.keys(obj) == this.state.btnSelection) {
-//          let value = Object.values(obj);
-//          value[0].map((v, index)=>{
-//             console.log(v[0]);
-//             console.log(index);
-//          });
-//          break;
-//      }
-//    }
-  //region_data.map((v, index) => {console.log(Object.keys(v)[0])});
-
  }
 
   render(){

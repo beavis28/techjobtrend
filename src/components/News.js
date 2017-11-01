@@ -17,7 +17,6 @@ class News extends React.Component {
   render() {
     return (
       <div>
-        <div className="App-title-desc">Latest Tech News</div>
         <List style={style} >
           {
             this.state.rss_data.map((v, index) =>

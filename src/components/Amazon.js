@@ -31,7 +31,7 @@ function Amazon(props) {
 
   return (
     <div className={classes.root}>
-      <GridList className={classes.gridList} cols={5}>
+      <GridList className={classes.gridList} cols={3}>
         {props.amazon_data.map(tile => (
           <GridListTile key={tile.url}>
             <img src={tile.image} alt={tile.title} />
