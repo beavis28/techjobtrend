@@ -19,3 +19,13 @@ for item in soup.find_all('item'):
 
 with open(join('result', 'amazon_data.json'), 'w') as outfile:
     json.dump(output_data, outfile)
+
+
+response = amazon.ItemSearch(Keywords="reactjs", SearchIndex="KindleStore", ResponseGroup="Images, ItemAttributes, Offers")
+soup = BeautifulSoup(response,"lxml")
+output_data = []
+for item in soup.find_all('item'):
+  output_data.append({'title': item.title.text, 'image': item.mediumimage.url.text, 'url': item.url.text})
+
+with open(join('result', 'high_performance_amazon_data.json'), 'w') as outfile:
+    json.dump(output_data, outfile)
