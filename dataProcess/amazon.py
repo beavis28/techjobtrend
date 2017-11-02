@@ -13,10 +13,10 @@ response1 = amazon.ItemSearch(Keywords="javascript", SearchIndex="KindleStore", 
 soup1 = BeautifulSoup(response1,"lxml")
 
 response2 = amazon.ItemSearch(Keywords="java", SearchIndex="KindleStore", ResponseGroup="Images, ItemAttributes, Offers")
-soup2 = BeautifulSoup(response1,"lxml")
+soup2 = BeautifulSoup(response2,"lxml")
 
 response3 = amazon.ItemSearch(Keywords="tensorflow", SearchIndex="KindleStore", ResponseGroup="Images, ItemAttributes, Offers")
-soup3 = BeautifulSoup(response1,"lxml")
+soup3 = BeautifulSoup(response3,"lxml")
 
 output_data = []
 
@@ -28,19 +28,19 @@ for item in soup1.find_all('item'):
   index += 1
   output_data.append({'title': item.title.text, 'image': item.mediumimage.url.text, 'url': item.url.text})
   if index == 3:
-    break;
+    break
 
 for item in soup2.find_all('item'):
   index += 1
   output_data.append({'title': item.title.text, 'image': item.mediumimage.url.text, 'url': item.url.text})
   if index == 2:
-    break;
+    break
 
 for item in soup3.find_all('item'):
   index += 1
   output_data.append({'title': item.title.text, 'image': item.mediumimage.url.text, 'url': item.url.text})
   if index == 2:
-    break;
+    break
 
 with open(join('result', 'amazon_data.json'), 'w') as outfile:
     json.dump(output_data, outfile)
