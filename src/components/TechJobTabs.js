@@ -41,9 +41,9 @@ class TechJobTabs extends React.Component {
     return (
       <div className={classes.root}>
           <Tabs value={value} onChange={this.handleChange} centered indicatorColor="primary">
-            <Tab label="Total Rank" href="#total-rank"/>
-            <Tab label="Tech News" href="#news" />
-            <Tab label="Tech Book Rank" href="#ebook-rank" />
+            <Tab label="Rank" href="#rank"/>
+            <Tab label="News" href="#news" />
+            <Tab label="Books" href="#books" />
           </Tabs>
         {value === 0 && <TabContainer>            
             <RankingsTable

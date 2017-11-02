@@ -94,6 +94,7 @@ class App extends Component {
       <div className="App">
         <h1 className="App-title">Tech Job Trends</h1>
         <div className="App-title-desc">-- which tech should you learn? --</div>
+        <div className="App-title-small">updated on {new Date().toJSON().slice(0,10)}</div>
         <div className="App-header">
           <Grid container spacing={24}  >
             <Grid item xs={12} sm={12} md={6} lg={6}>

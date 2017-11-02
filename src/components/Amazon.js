@@ -15,18 +15,27 @@ const styles = theme => ({
     overflow: 'hidden',
     background: theme.palette.background.paper,
   },
+  img : {
+    width: 112,
+    height: 160,
+    margin: "auto",
+    display: "block",
+  },
   gridList: {
-    flexWrap: 'nowrap',
+    flexWrap: 'wrap',
     // Promote the list into his own layer on Chrome. This cost memory but helps keeping high FPS.
     transform: 'translateZ(0)',
     margin:'50px',
+    cursor:"pointer",
   },
   title: {
-    color: theme.palette.primary[200],
+    fontSize: '90%',
+    //whiteSpace: 'normal',
   },
   titleBar: {
-    background:
-      'linear-gradient(to top, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.3) 70%, rgba(0,0,0,0) 100%)',
+    // background:
+    //   'linear-gradient(to top, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.3) 70%, rgba(0,0,0,0) 100%)',
+    //height: 90,
   },
 });
 
@@ -39,19 +48,17 @@ function Amazon(props) {
 
   return (
     <div className={classes.root}>
-      <AppBar position="static" color="default">
+      <AppBar position="static" >
         <Toolbar>
           <Typography type="title" color="inherit">
-            Top Rank Tech Book
+            High Demand Tech Books
           </Typography>
         </Toolbar>
       </AppBar>
-      <GridList className={classes.gridList} cols={5} >
+      <GridList className={classes.gridList} cols={2} >
         {props.amazon_data.map(tile => (
-          <GridListTile key={tile.url}>
-            <img src={tile.image} alt={tile.title} 
-            onClick={() => clickHandler(tile.url)}
-            />
+          <GridListTile key={tile.url} onClick={() => clickHandler(tile.url)}>
+            <img src={tile.image} alt={tile.title} className={classes.img}/>
             <GridListTileBar
               title={tile.title}
               classes={{
@@ -59,6 +66,7 @@ function Amazon(props) {
                 title: classes.title,
               }}
             />
+            
           </GridListTile>
         ))}
       </GridList>
