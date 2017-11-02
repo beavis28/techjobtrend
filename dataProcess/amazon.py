@@ -30,16 +30,18 @@ for item in soup1.find_all('item'):
   if index == 3:
     break
 
+index = 0
 for item in soup2.find_all('item'):
   index += 1
   output_data.append({'title': item.title.text, 'image': item.mediumimage.url.text, 'url': item.url.text})
-  if index == 2:
+  if index == 3:
     break
 
+index = 0
 for item in soup3.find_all('item'):
   index += 1
   output_data.append({'title': item.title.text, 'image': item.mediumimage.url.text, 'url': item.url.text})
-  if index == 2:
+  if index == 4:
     break
 
 with open(join('result', 'amazon_data.json'), 'w') as outfile:
