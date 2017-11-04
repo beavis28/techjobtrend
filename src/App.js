@@ -16,6 +16,7 @@ import Suggest from './components/Suggest';
 import SelectionTags from './components/SelectionTags';
 import TopChanges from './components/TopChanges';
 import RegionRanking from './components/RegionRanking';
+import CountryRanking from './components/CountryRanking';
 
 class App extends Component {
   state = {
@@ -132,10 +133,23 @@ class App extends Component {
           </Grid>
         </div>
 
-        <RegionRanking
-          history={this.props.history}
-          location={this.props.location}
-        />
+
+        <Grid container spacing={24}  >
+            <Grid item xs={12} sm={12} md={6} lg={6}>
+              <RegionRanking
+                history={this.props.history}
+                location={this.props.location}
+              />
+            </Grid>
+            <Grid item xs={12} sm={12} md={6} lg={6}>
+            <CountryRanking
+                history={this.props.history}
+                location={this.props.location}
+              />
+            </Grid>
+        </Grid>
+
+
         <TopChanges
           history={this.props.history}
           location={this.props.location}
