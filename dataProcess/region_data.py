@@ -36,5 +36,7 @@ for l in location_list:
     output_data.append({p: o})
 
 
+output_data = sorted(output_data)
+
 with open(join('result', 'region_data.json'), 'w') as outfile:
     json.dump(output_data, outfile)
