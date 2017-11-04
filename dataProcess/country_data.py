@@ -14,7 +14,7 @@ with open(join('processed', latest_file_name), 'r') as f:
     for x in original_data:
         location = ""
         if x['location']:
-            location = x['location'].split(",")[-1].strip()
+            location = x['location'].split(",")[-1].replace("- \r\n", "").strip()
         else:
             continue
         if not location_list:
@@ -23,7 +23,7 @@ with open(join('processed', latest_file_name), 'r') as f:
             bfind = False
             for y in location_list:
 
-                if y['location'] == location:
+                if y['location'].lower() == location.lower():
                     bfind = True
                     y['tags'].extend(x['tags'])
                     break

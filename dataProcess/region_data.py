@@ -13,19 +13,25 @@ with open(join('processed', latest_file_name), 'r') as f:
     original_data = json.load(f)
 
     for x in original_data:
+        location = ""
+        if x['location']:
+            location = x['location'].replace("- \r\n", "").strip()
+        else:
+            continue
+
         if not location_list:
-            location_list.append({'location': x['location'], 'tags': x['tags']})
+            location_list.append({'location': location, 'tags': x['tags']})
         else:
             bfind = False
             for y in location_list:
 
-                if y['location'] == x['location']:
+                if y['location'] == location:
                     bfind = True
                     y['tags'].extend(x['tags'])
                     break
 
             if bfind == False:
-                location_list.append({'location': x['location'], 'tags': x['tags']})
+                location_list.append({'location': location, 'tags': x['tags']})
 
 for l in location_list:
     m = dict(Counter(l['tags']))
