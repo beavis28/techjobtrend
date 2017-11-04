@@ -3,7 +3,6 @@ import json
 import arrow
 from collections import Counter
 
-
 output_data = []
 location_list = []
 
@@ -13,19 +12,24 @@ with open(join('processed', latest_file_name), 'r') as f:
     original_data = json.load(f)
 
     for x in original_data:
+        location = ""
+        if x['location']:
+            location = x['location'].split(",")[-1].strip()
+        else:
+            continue
         if not location_list:
-            location_list.append({'location': x['location'], 'tags': x['tags']})
+            location_list.append({'location': location, 'tags': x['tags']})
         else:
             bfind = False
             for y in location_list:
 
-                if y['location'] == x['location']:
+                if y['location'] == location:
                     bfind = True
                     y['tags'].extend(x['tags'])
                     break
 
             if bfind == False:
-                location_list.append({'location': x['location'], 'tags': x['tags']})
+                location_list.append({'location': location, 'tags': x['tags']})
 
 for l in location_list:
     m = dict(Counter(l['tags']))
@@ -37,5 +41,5 @@ for l in location_list:
 
 output_data = sorted(output_data)
 
-with open(join('result', 'region_data.json'), 'w') as outfile:
+with open(join('result', 'country_data.json'), 'w') as outfile:
     json.dump(output_data, outfile)
