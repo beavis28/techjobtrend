@@ -1,7 +1,6 @@
 import bottlenose
 from bs4 import BeautifulSoup
-import lxml.etree as etree  
-from os.path import isfile, join
+from os.path import join
 import json
 
 ACCESS_KEY = "AKIAIJWGVA4XGB6P6OQA"
