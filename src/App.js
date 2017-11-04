@@ -93,7 +93,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <h1 className="App-title">Tech Job Trends</h1>
+        <h1 className="App-title">Tech Job Trend</h1>
         <div className="App-title-desc">-- which tech should you learn? --</div>
         <div className="App-title-small">updated on {new Date().toJSON().slice(0,10)}</div>
         <div className="App-header">
