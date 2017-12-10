@@ -24,33 +24,35 @@ def convert_money_string_to_int(money, currency_mark):
     test = test.strip()
     test = float(test)
 
-    if currency_mark == u'€':
-       test = currency_rate.convert('EUR', 'USD', test)
-    elif currency_mark == 'C':
-        test = currency_rate.convert('CAD', 'USD', test)
-    elif currency_mark == 'N':
-        test = currency_rate.convert('NZD', 'USD', test)
-    elif currency_mark == u'£':
-        test = currency_rate.convert('GBP', 'USD', test)
-    elif currency_mark == 'A':
-        test = currency_rate.convert('AUD', 'USD', test)
-    elif currency_mark == 'K':
-        test = currency_rate.convert('KRW', 'USD', test)
-    elif currency_mark == u'₹':
-        test = currency_rate.convert('IDR', 'USD', test)
-    elif currency_mark == '$':
-        test = test
-    elif currency_mark == 'z':
-        test = currency_rate.convert('PLN', 'USD', test)
-    elif currency_mark == u'₪':
-        test = currency_rate.convert('ILS', 'USD', test)
-    elif currency_mark == 'k':
-        test = currency_rate.convert('SEK', 'USD', test)
-    elif currency_mark == 'R':
-        test = currency_rate.convert('MYR', 'USD', test)
-    else:
-        print(currency_mark)
-
+    try:
+      if currency_mark == u'€':
+         test = currency_rate.convert('EUR', 'USD', test)
+      elif currency_mark == 'C':
+         test = currency_rate.convert('CAD', 'USD', test)
+      elif currency_mark == 'N':
+         test = currency_rate.convert('NZD', 'USD', test)
+      elif currency_mark == u'£':
+         test = currency_rate.convert('GBP', 'USD', test)
+      elif currency_mark == 'A':
+         test = currency_rate.convert('AUD', 'USD', test)
+      elif currency_mark == 'K':
+         test = currency_rate.convert('KRW', 'USD', test)
+      elif currency_mark == u'₹':
+         test = currency_rate.convert('IDR', 'USD', test)
+      elif currency_mark == '$':
+         test = test
+      elif currency_mark == 'z':
+         test = currency_rate.convert('PLN', 'USD', test)
+      elif currency_mark == u'₪':
+         test = currency_rate.convert('ILS', 'USD', test)
+      elif currency_mark == 'k':
+         test = currency_rate.convert('SEK', 'USD', test)
+      elif currency_mark == 'R':
+         test = currency_rate.convert('MYR', 'USD', test)
+      else:
+         print(currency_mark)
+    except:
+      pass
 
     return test
 
