@@ -94,7 +94,7 @@ class App extends Component {
     return (
       <div className="App">
         <h1 className="App-title">Tech Job Trend</h1>
-        <div className="App-title-small">Based on <a target="_blank" href="https://stackoverflow.com/jobs">StackOverFlow Jobs</a> on 2017-11-30</div>
+        <div className="App-title-small">Based on <a target="_blank" href="https://stackoverflow.com/jobs">StackOverFlow Jobs</a> on 2017-12-10</div>
         <div className="App-title-desc">-- which tech should you learn? --</div>
         <div className="App-header">
           <Grid container spacing={24}  >
