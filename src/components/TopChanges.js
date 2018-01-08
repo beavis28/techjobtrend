@@ -29,7 +29,7 @@ class TopChanges  extends React.Component {
       <div className="changes">
         <div className="buttons-container">
           <div>
-            What Tech is rising or falling fastest
+            What Tech is hot or cold
           </div>
           <div>
             <Button raised key="top25" color="primary" style={style} onClick={() => this.clickHandler("top25")}>Top 25</Button>
@@ -41,7 +41,7 @@ class TopChanges  extends React.Component {
               <Grid container spacing={24}>
                  <Grid item xs={12} sm={6} md={6} lg={6}>
                     <Table >
-                      {this.renderTableHeader("BEST")}
+                      {this.renderTableHeader("HOT")}
                      <TableBody>
                         {this.renderRows("best")}
                         </TableBody>
@@ -49,7 +49,7 @@ class TopChanges  extends React.Component {
                 </Grid>
                 <Grid item xs={12} sm={6} md={6} lg={6}>
                    <Table >
-                     {this.renderTableHeader("WORST")}
+                     {this.renderTableHeader("COLD")}
                       <TableBody>
                         {this.renderRows("worst")}
                       </TableBody>
@@ -66,7 +66,7 @@ class TopChanges  extends React.Component {
       <TableHead >
         <TableRow className="table-row">
           <TableCell colSpan="3"  style={{textAlign: 'center'}}>
-            {type} PERFORMERS
+            {type} TECH
           </TableCell>
         </TableRow>
         <TableRow>
