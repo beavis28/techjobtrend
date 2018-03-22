@@ -1,4 +1,4 @@
-# tech job trend
+# Tech Job Trend
 
 This is website following current tech job trend from stackoverflow career.
 Here is actual website you can see
